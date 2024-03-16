@@ -1,0 +1,8 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>All Posts - 追追</title>
+        <link>https://pyjjs.com/en/posts/</link>
+        <description>All Posts | 追追</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>JJ@pyjjs.com (JJ)</managingEditor>
+            <webMaster>JJ@pyjjs.com (JJ)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 28 Feb 2022 14:27:14 &#43;0000</lastBuildDate><atom:link href="https://pyjjs.com/en/posts/" rel="self" type="application/rss+xml" /></channel>
+</rss>

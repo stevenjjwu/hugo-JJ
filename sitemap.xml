@@ -1,7 +1,18 @@
-<urlset
-    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-    xmlns:xhtml="http://www.w3.org/1999/xhtml"
-    ><url>
-            <loc>http://pyjjs.com/categories/</loc></url><url>
-            <loc>http://pyjjs.com/tags/</loc></url><url>
-            <loc>http://pyjjs.com/</loc></url></urlset>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <sitemap>
+    <loc>https://pyjjs.com/zh-tw/sitemap.xml</loc>
+    
+      <lastmod>2022-02-28T14:27:14+00:00</lastmod>
+    
+  </sitemap>
+  
+  <sitemap>
+    <loc>https://pyjjs.com/en/sitemap.xml</loc>
+    
+      <lastmod>2022-02-28T14:27:14+00:00</lastmod>
+    
+  </sitemap>
+  
+</sitemapindex>
