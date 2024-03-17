@@ -1,935 +1,130 @@
-
-
-<!doctype html>
-<html lang="zh-TW">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="robots" content="noodp" />
-    <title>PWA 支持 - 追追</title><meta
-  name="Description"
-  content="Guide to setup PWA in DoIt"
-/><meta property="og:title" content="PWA 支持" />
-<meta property="og:description" content="Guide to setup PWA in DoIt" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://pyjjs.com/pwa-support/" /><meta property="og:image" content="https://pyjjs.com/pwa-support/featured-image.webp" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-05-10T16:21:41+01:00" />
-<meta property="article:modified_time" content="2021-05-10T16:21:41+01:00" /><meta property="og:site_name" content="Hugo DoIt Theme Documentation" />
-
-
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://pyjjs.com/pwa-support/featured-image.webp" /><meta name="twitter:title" content="PWA 支持"/>
-<meta name="twitter:description" content="Guide to setup PWA in DoIt"/>
-<meta
-  name="application-name"
-  content="DoIt"
-/>
-<meta
-  name="apple-mobile-web-app-title"
-  content="DoIt"
-/>
-
-<meta name="theme-color" content="#f8f8f8" /><meta name="msapplication-TileColor" content="#da532c" /><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" /><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" /><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" /><link rel="canonical" href="https://pyjjs.com/pwa-support/" /><link rel="prev" href="https://pyjjs.com/create-diagrams/" /><link rel="next" href="https://pyjjs.com/emoji-support/" />
-<link
-      rel="stylesheet"
-      href="/css/main.css"
-      
-    /><link
-      rel="stylesheet"
-      href="/lib/normalize/normalize.min.css"
-      
-    /><link
-      rel="stylesheet"
-      href="/css/color.css"
-      
-    /><link
-      rel="stylesheet"
-      href="/css/style.min.css"
-      
-    /><link
-      rel="preload"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-      href="/lib/fontawesome-free/all.min.css"
-      
-    />
-    <noscript
-      ><link
-        rel="stylesheet"
-        href="/lib/fontawesome-free/all.min.css"
-        
-    /></noscript><link
-      rel="preload"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-      href="/lib/animate/animate.min.css"
-      
-    />
-    <noscript
-      ><link
-        rel="stylesheet"
-        href="/lib/animate/animate.min.css"
-        
-    /></noscript><meta name="google-site-verification" content="MQ8DNu27ayX6B_4ObiEDK09vGr1fdy7kOAnbd09hJk4" /><script type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "BlogPosting",
-        "headline": "PWA 支持",
-        "inLanguage": "zh-TW",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://pyjjs.com/pwa-support/"
-        },"image": ["https://pyjjs.com/images/Apple-Devices-Preview.png"],"genre": "posts","keywords": "PWA","wordcount":  1007 ,
-        "url": "https://pyjjs.com/pwa-support/","datePublished": "2021-05-10T16:21:41+01:00","dateModified": "2021-05-10T16:21:41+01:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
-            "@type": "Organization",
-            "name": "xxxx","logo": {
-                    "@type": "ImageObject",
-                    "url": "https://pyjjs.com/images/53259609.png",
-                    "width":  400 ,
-                    "height":  400 
-                }},"authors": [{
-                        "@type": "Person",
-                        "name": "PCloud"
-                    }],"description": "Guide to setup PWA in DoIt"
-    }
-    </script></head>
-
-  <body
-    header-desktop="fixed"
-    header-mobile="auto"
-  ><script type="text/javascript">
-        function setTheme(theme) {document.body.setAttribute('theme', theme); document.documentElement.style.setProperty('color-scheme', theme === 'light' ? 'light' : 'dark'); window.theme = theme;   window.isDark = window.theme !== 'light' }
-        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
-        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
-        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('auto' === 'light' || 'auto' === 'dark' || 'auto' === 'black') setTheme('auto'), saveTheme('auto'); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
-        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
-        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
-        window.switchThemeEventSet = new Set()
-    </script>
-    <div id="back-to-top"></div>
-    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
-  <div class="header-wrapper">
-    <div class="header-title">
-      <a href="/" title="追追"><img
-    class="logo"
-    loading="lazy"
-    src="/images/mstile-80x80.png"
-    srcset="/images/mstile-80x80.png,
-        /images/mstile-80x80.png 1.5x,
-        /images/mstile-80x80.png 2x"
-    title="images/mstile-80x80.png"
-    height="40"
-    width="40"
-  /><span id="desktop-header-typeit" class="typeit"></span></a>
-    </div>
-    <div class="menu">
-      <div class="menu-inner"><a
-            class="menu-item"
-            href="/posts/"
-            
-          > 所有文章
-            </a><a
-            class="menu-item"
-            href="/tags/"
-            
-          > 标签
-            </a><a
-            class="menu-item"
-            href="/categories/"
-            
-          > 分类
-            </a><a
-            class="menu-item"
-            href="/series/"
-            
-          > 系列
-            </a><a
-            class="menu-item"
-            href="/authors/"
-            
-          > 作者
-            </a><a
-            class="menu-item"
-            href="/showcase/"
-            
-          > 作品
-            </a><a
-            class="menu-item"
-            href="/categories/documentation/"
-            
-          > 文档
-            </a><a
-            class="menu-item"
-            href="/about/"
-            
-          > 关于
-            </a><a
-            class="menu-item"
-            href="https://github.com/HEIGE-PCloud/DoIt"
-            
-              title="GitHub"
-            
-              rel="noopener noreferrer" target="_blank"
-            
-          ><i class='fab fa-github fa-fw'></i> 
-            </a><span class="menu-item delimiter"></span><a
-            href="javascript:void(0);"
-            class="menu-item language"
-            title="選擇語言"
-          >繁體中文<i class="fas fa-chevron-right fa-fw"></i>
-            <select
-              class="language-select"
-              title="選擇語言"
-              id="language-select-desktop"
-              onchange="location = this.value;"
-            ><option
-                    value="/en/pwa-support/"
-                    
-                  >English</option><option
-                    value="/pwa-support/"
-                    selected
-                  >繁體中文</option></select>
-          </a><span class="menu-item search" id="search-desktop">
-            <input
-              type="text"
-              placeholder="搜索文章標題或內容..."
-              id="search-input-desktop"
-            />
-            <a
-              href="javascript:void(0);"
-              class="search-button search-toggle"
-              id="search-toggle-desktop"
-              title="搜索"
-            >
-              <i class="fas fa-search fa-fw"></i>
-            </a>
-            <a
-              href="javascript:void(0);"
-              class="search-button search-clear"
-              id="search-clear-desktop"
-              title="清空"
-            >
-              <i class="fas fa-times-circle fa-fw"></i>
-            </a>
-            <span
-              class="search-button search-loading"
-              id="search-loading-desktop"
-            >
-              <i class="fas fa-spinner fa-fw fa-spin"></i>
-            </span>
-          </span><a
-            href="javascript:void(0);"
-            class="menu-item theme-select"
-            title="切換主題"
-          >
-            <i class="fas fa-adjust fa-fw"></i>
-            <select
-              class="color-theme-select"
-              id="theme-select-desktop"
-              title="切換主題"
-            >
-              <option value="light"></option>
-              <option value="dark"></option>
-              <option value="black"></option>
-              <option value="auto"></option>
-            </select>
-          </a></div>
-    </div>
-  </div>
-</header><header class="mobile" id="header-mobile">
-  <div class="header-container">
-    <div class="header-wrapper">
-      <div class="header-title">
-        <a href="/" title="追追"><img
-    class="logo"
-    loading="lazy"
-    src="/images/mstile-80x80.png"
-    srcset="/images/mstile-80x80.png,
-        /images/mstile-80x80.png 1.5x,
-        /images/mstile-80x80.png 2x"
-    title="images/mstile-80x80.png"
-    height="40"
-    width="40"
-  /><span id="mobile-header-typeit" class="typeit"></span></a>
-      </div>
-      <div class="menu-toggle" id="menu-toggle-mobile">
-        <span></span><span></span><span></span>
-      </div>
-    </div>
-    <div class="menu" id="menu-mobile"><div class="search-wrapper">
-          <div class="search mobile" id="search-mobile">
-            <input
-              type="text"
-              placeholder="搜索文章標題或內容..."
-              id="search-input-mobile"
-            />
-            <a
-              href="javascript:void(0);"
-              class="search-button search-toggle"
-              id="search-toggle-mobile"
-              title="搜索"
-            >
-              <i class="fas fa-search fa-fw"></i>
-            </a>
-            <a
-              href="javascript:void(0);"
-              class="search-button search-clear"
-              id="search-clear-mobile"
-              title="清空"
-            >
-              <i class="fas fa-times-circle fa-fw"></i>
-            </a>
-            <span
-              class="search-button search-loading"
-              id="search-loading-mobile"
-            >
-              <i class="fas fa-spinner fa-fw fa-spin"></i>
-            </span>
-          </div>
-          <a
-            href="javascript:void(0);"
-            class="search-cancel"
-            id="search-cancel-mobile"
-          >
-            取消
-          </a>
-        </div><a
-          class="menu-item"
-          href="/posts/"
-          title=""
-          
-        >所有文章</a><a
-          class="menu-item"
-          href="/tags/"
-          title=""
-          
-        >标签</a><a
-          class="menu-item"
-          href="/categories/"
-          title=""
-          
-        >分类</a><a
-          class="menu-item"
-          href="/series/"
-          title=""
-          
-        >系列</a><a
-          class="menu-item"
-          href="/authors/"
-          title=""
-          
-        >作者</a><a
-          class="menu-item"
-          href="/showcase/"
-          title=""
-          
-        >作品</a><a
-          class="menu-item"
-          href="/categories/documentation/"
-          title=""
-          
-        >文档</a><a
-          class="menu-item"
-          href="/about/"
-          title=""
-          
-        >关于</a><a
-          class="menu-item"
-          href="https://github.com/HEIGE-PCloud/DoIt"
-          title="GitHub"
-          
-            rel="noopener noreferrer" target="_blank"
-          
-        ><i class='fab fa-github fa-fw'></i></a><a
-          href="javascript:void(0);"
-          class="menu-item theme-select"
-          title="切換主題"
-        >
-          <i class="fas fa-adjust fa-fw"></i>
-          <select
-            class="color-theme-select"
-            id="theme-select-mobile"
-            title="切換主題"
-          >
-            <option value="light"></option>
-            <option value="dark"></option>
-            <option value="black"></option>
-            <option value="auto"></option>
-          </select>
-        </a><a
-          href="javascript:void(0);"
-          class="menu-item"
-          title="選擇語言"
-        >繁體中文<i class="fas fa-chevron-right fa-fw"></i>
-          <select
-            class="language-select"
-            title="選擇語言"
-            onchange="location = this.value;"
-          ><option
-                  value="/en/pwa-support/"
-                  
-                >English</option><option
-                  value="/pwa-support/"
-                  selected
-                >繁體中文</option></select>
-        </a></div>
-  </div>
-</header>
-<div class="search-dropdown desktop">
-  <div id="search-dropdown-desktop"></div>
-</div>
-<div class="search-dropdown mobile">
-  <div id="search-dropdown-mobile"></div>
-</div>
-<main class="main">
-        <div class="container"><div class="toc" id="toc-auto">
-      <h2 class="toc-title">目錄</h2>
-      <div
-        class="toc-content"
-        id="toc-content-auto"
-      ><nav id="TableOfContents">
-  <ul>
-    <li><a href="#什么是-pwa">什么是 PWA？</a></li>
-    <li><a href="#为什么要配置-pwa">为什么要配置 PWA？</a></li>
-    <li><a href="#如何将使用-doit-主题的静态网站配置为-pwa">如何将使用 DoIt 主题的静态网站配置为 PWA?</a>
-      <ul>
-        <li><a href="#配置-sitewebmanifest">配置 <code>site.webmanifest</code></a></li>
-        <li><a href="#配置离线页面">配置离线页面</a></li>
-        <li><a href="#开启-enablepwa-选项">开启 <code>enablePWA</code> 选项</a></li>
-      </ul>
-    </li>
-    <li><a href="#安装并使用你的-pwa">安装并使用你的 PWA</a></li>
-  </ul>
-</nav></div>
-    </div><script>
-        document
-          .getElementsByTagName("main")[0]
-          .setAttribute("autoTOC", "true");
-      </script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">
-      PWA 支持
-    </h1><div class="post-meta">
-      <div class="post-meta-line">
-        <span class="post-author"><span class="author"><span class="author fas fa-user-circle fa-fw"></span><span class="screen-reader-text">  </span><a href="https://pyjjs.com/authors/pcloud">PCloud</a></span>
-        </span>&nbsp;<span class="post-category"></span>&nbsp;<span class="post-category">收錄於 <a href="/categories/documentation/"><i class="far fa-folder fa-fw"></i>文档</a></span></div>
-      <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time
-            datetime="2021-05-10"
-            >2021-05-10</time
-          >&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2021-05-10"
-              >2021-05-10</time
-            >&nbsp;<i class="fas fa-pencil-alt fa-fw"></i
-          >&nbsp;約 1007 字&nbsp;<i class="far fa-clock fa-fw"></i
-          >&nbsp;預計閱讀 3 分鐘&nbsp;</div>
-    </div><div class="featured-image"><img
-    
-    loading="eager"
-    src="/pwa-support/featured-image_hu9a48924576f8892d290b789d2827f47f_15168_1200x0_resize_q75_h2_lanczos_2.webp"
-    srcset="/pwa-support/featured-image_hu9a48924576f8892d290b789d2827f47f_15168_700x0_resize_q75_h2_lanczos_2.webp 700w,
-        /pwa-support/featured-image_hu9a48924576f8892d290b789d2827f47f_15168_1200x0_resize_q75_h2_lanczos_2.webp 1200w,
-        /pwa-support/featured-image_hu9a48924576f8892d290b789d2827f47f_15168_2000x0_resize_q75_h2_lanczos_2.webp 2000w"
-    title="Guide to setup PWA in DoIt"
-    height="581"
-    width="1200"
-  /></div><div
-        class="details toc"
-        id="toc-static"
-        kept=""
-      >
-        <div class="details-summary toc-title">
-          <span>目錄</span>
-          <span><i class="details-icon fas fa-angle-right"></i></span>
-        </div>
-        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
-  <ul>
-    <li><a href="#什么是-pwa">什么是 PWA？</a></li>
-    <li><a href="#为什么要配置-pwa">为什么要配置 PWA？</a></li>
-    <li><a href="#如何将使用-doit-主题的静态网站配置为-pwa">如何将使用 DoIt 主题的静态网站配置为 PWA?</a>
-      <ul>
-        <li><a href="#配置-sitewebmanifest">配置 <code>site.webmanifest</code></a></li>
-        <li><a href="#配置离线页面">配置离线页面</a></li>
-        <li><a href="#开启-enablepwa-选项">开启 <code>enablePWA</code> 选项</a></li>
-      </ul>
-    </li>
-    <li><a href="#安装并使用你的-pwa">安装并使用你的 PWA</a></li>
-  </ul>
-</nav></div>
-      </div><div class="content" id="content"><p>了解如何在 DoIt 主题中配置渐进式网络应用程序 (PWA).</p>
-<h2 id="什么是-pwa" class="headerLink">
-    <a href="#%e4%bb%80%e4%b9%88%e6%98%af-pwa" class="header-mark"></a>1 什么是 PWA？</h2><p><a
-  href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps"
-  
-     target="_blank"
-  
-  rel="noopener noreferrer"
-  
->渐进式网络应用程序(PWA)</a>
-是运用现代的 Web API 以及传统的渐进式增强策略来创建跨平台网络应用程序.这些应用无处不在、功能丰富, 使其具有与原生应用相同的用户体验.</p>
-<h2 id="为什么要配置-pwa" class="headerLink">
-    <a href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e9%85%8d%e7%bd%ae-pwa" class="header-mark"></a>2 为什么要配置 PWA？</h2><p>你并不需要将你的站点配置为一个 PWA. 传统的网站足以满足你想要分享的所有内容.但是, PWA 带来了一些可能有用的额外好处.</p>
-<ol>
-<li>在用户安装 PWA 后, 页面将由 service worker 自动缓存, 这使得从第二次访问开始页面将被快速加载.</li>
-<li>用户始终可以在离线时访问缓存的页面.</li>
-</ol>
-<p>这些功能可能对某些网站（例如此文档站点）很有用, 但是将个人博客配置为 PWA 就没有多少意义.当然一切都取决于你的选择, 无论如何 DoIt 主题都将为你提供开启此功能的选项.</p>
-<h2 id="如何将使用-doit-主题的静态网站配置为-pwa" class="headerLink">
-    <a href="#%e5%a6%82%e4%bd%95%e5%b0%86%e4%bd%bf%e7%94%a8-doit-%e4%b8%bb%e9%a2%98%e7%9a%84%e9%9d%99%e6%80%81%e7%bd%91%e7%ab%99%e9%85%8d%e7%bd%ae%e4%b8%ba-pwa" class="header-mark"></a>3 如何将使用 DoIt 主题的静态网站配置为 PWA?</h2><h3 id="配置-sitewebmanifest" class="headerLink">
-    <a href="#%e9%85%8d%e7%bd%ae-sitewebmanifest" class="header-mark"></a>3.1 配置 <code>site.webmanifest</code></h3><p>你需要在 <code>/static</code> 文件夹下创建名为 <code>site.webmanifest</code> 的文件, 并在此文件提供有关你的 PWA 的信息.</p>
-<p>以下是必填参数.</p>
-<ul>
-<li>
-<p><strong>name</strong> <em>[必须]</em></p>
-<p>你的 PWA 的名称.</p>
-</li>
-<li>
-<p><strong>short_name</strong> <em>[必须]</em></p>
-<p>你的 PWA 的简称.</p>
-</li>
-<li>
-<p><strong>start_url</strong> <em>[必须]</em></p>
-<p>你的 PWA 的起始地址.请默认填写<code>&quot;/&quot;</code>.</p>
-</li>
-<li>
-<p><strong>icons</strong> <em>[必须]</em></p>
-<p>你的 PWA 的图标.你可以将网站的 favicon 作为图标.</p>
-</li>
-</ul>
-<p>您还可以在 <code>site.webmanifest</code> 中设置其他可选值, 查看这篇<a
-  href="https://developer.mozilla.org/zh-CN/docs/Web/Manifest"
-  
-     target="_blank"
-  
-  rel="noopener noreferrer"
-  
->文档</a>
-来了解更多.</p>
-<p>这是一份示例 <code>site.webmanifest</code> 文件.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;DoIt Theme Documentation&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;short_name&#34;</span><span class="p">:</span> <span class="s2">&#34;DoIt Docs&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;start_url&#34;</span><span class="p">:</span> <span class="s2">&#34;/&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;description&#34;</span><span class="p">:</span> <span class="s2">&#34;The documentation site for Hugo DoIt Theme&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;theme_color&#34;</span><span class="p">:</span> <span class="s2">&#34;#ffffff&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;background_color&#34;</span><span class="p">:</span> <span class="s2">&#34;#ffffff&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;orientation&#34;</span><span class="p">:</span> <span class="s2">&#34;portrait&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;display&#34;</span><span class="p">:</span> <span class="s2">&#34;standalone&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;icons&#34;</span><span class="p">:</span> <span class="p">[</span>
-</span></span><span class="line"><span class="cl">        <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="nt">&#34;src&#34;</span><span class="p">:</span> <span class="s2">&#34;/android-chrome-192x192.png&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">            <span class="nt">&#34;sizes&#34;</span><span class="p">:</span> <span class="s2">&#34;192x192&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">            <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;image/png&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">},</span>
-</span></span><span class="line"><span class="cl">        <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="nt">&#34;src&#34;</span><span class="p">:</span> <span class="s2">&#34;/android-chrome-512x512.png&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">            <span class="nt">&#34;sizes&#34;</span><span class="p">:</span> <span class="s2">&#34;512x512&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">            <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;image/png&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">},</span>
-</span></span><span class="line"><span class="cl">        <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="nt">&#34;src&#34;</span><span class="p">:</span> <span class="s2">&#34;/apple-touch-icon.png&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">            <span class="nt">&#34;sizes&#34;</span><span class="p">:</span> <span class="s2">&#34;180x180&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">            <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;image/png&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">            <span class="nt">&#34;purpose&#34;</span><span class="p">:</span> <span class="s2">&#34;any maskable&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">]</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="配置离线页面" class="headerLink">
-    <a href="#%e9%85%8d%e7%bd%ae%e7%a6%bb%e7%ba%bf%e9%a1%b5%e9%9d%a2" class="header-mark"></a>3.2 配置离线页面</h3><p>离线页面将在访客离线访问未缓存的页面时显示.</p>
-<p>在<code>/content</code>目录下创建<code>offline.md</code>并在其中编写离线提示.</p>
-<div
-    class="details admonition tip
-      open
-    "
-  >
-    <div class="details-summary admonition-title">
-      <i
-        class="icon fas fa-lightbulb fa-fw"
-      ></i
-      >Permalink<i
-        class="details-icon fas fa-angle-right fa-fw"
-      ></i>
-    </div>
-    <div class="details-content">
-      <div class="admonition-content">你需要确保离线页面的 <a
-  href="https://gohugo.io/content-management/urls/#permalinks"
-  
-     target="_blank"
-  
-  rel="noopener noreferrer"
-  
->Permalink</a>
- 是 <code>/offline</code>,  否则你需要手动更改 service worker 中 <code>OFFLINE_CACHE_FILES</code> 和 <code>OFFLINE_PAGE</code> 的值.</div>
-    </div>
-  </div>
-<div
-    class="details admonition warning
-      open
-    "
-  >
-    <div class="details-summary admonition-title">
-      <i
-        class="icon fas fa-exclamation-triangle fa-fw"
-      ></i
-      >i18n<i
-        class="details-icon fas fa-angle-right fa-fw"
-      ></i>
-    </div>
-    <div class="details-content">
-      <div class="admonition-content">目前离线页面不支持 i18n, 如果你运行的是多语言网站, 请考虑在同一页面上编写多条不同语言的离线消息.</div>
-    </div>
-  </div>
-<p>这是一个示例离线页面.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-md" data-lang="md"><span class="line"><span class="cl">---
-</span></span><span class="line"><span class="cl">title: &#34;Offline&#34;
-</span></span><span class="line"><span class="cl">---
-</span></span><span class="line"><span class="cl"><span class="k">
-</span></span></span><span class="line"><span class="cl"><span class="k">&gt; </span><span class="ge">你没有连接至互联网, 只有缓存的页面可用.
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="开启-enablepwa-选项" class="headerLink">
-    <a href="#%e5%bc%80%e5%90%af-enablepwa-%e9%80%89%e9%a1%b9" class="header-mark"></a>3.3 开启 <code>enablePWA</code> 选项</h3><p>前往 <code>config.toml</code>, 添加/修改 <code>[params]</code> 配置项下 <code>enablePWA</code> 选项的值为 <code>true</code>.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="p">[</span><span class="nx">params</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">    <span class="c"># ...</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">enablePWA</span> <span class="p">=</span> <span class="kc">true</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="安装并使用你的-pwa" class="headerLink">
-    <a href="#%e5%ae%89%e8%a3%85%e5%b9%b6%e4%bd%bf%e7%94%a8%e4%bd%a0%e7%9a%84-pwa" class="header-mark"></a>4 安装并使用你的 PWA</h2><p>如果一切顺利, 现在当你访问你的网站时, 浏览器将显示一个安装按钮.</p>
-<figure><a
-    class="lightgallery"
-    href="./Install-PWA.webp"
-    title="./Install-PWA.webp"
-    data-thumbnail="./Install-PWA.webp"
-    
-      data-sub-html="
+<!doctype html><html lang=zh-TW><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><title>PWA 支持 - 追追</title><meta name=Description content="Guide to setup PWA in DoIt"><meta property="og:title" content="PWA 支持">
+<meta property="og:description" content="Guide to setup PWA in DoIt"><meta property="og:type" content="article"><meta property="og:url" content="https://pyjjs.com/pwa-support/"><meta property="og:image" content="https://pyjjs.com/pwa-support/featured-image.webp"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-05-10T16:21:41+01:00"><meta property="article:modified_time" content="2024-03-17T01:21:02+08:00"><meta property="og:site_name" content="Hugo DoIt Theme Documentation"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://pyjjs.com/pwa-support/featured-image.webp"><meta name=twitter:title content="PWA 支持"><meta name=twitter:description content="Guide to setup PWA in DoIt"><meta name=application-name content="DoIt"><meta name=apple-mobile-web-app-title content="DoIt"><meta name=theme-color content="#f8f8f8"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=canonical href=https://pyjjs.com/pwa-support/><link rel=prev href=https://pyjjs.com/create-diagrams/><link rel=next href=https://pyjjs.com/emoji-support/><link rel=stylesheet href=/css/main.css><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/color.css><link rel=stylesheet href=/css/style.min.css><link rel=preload as=style onload='this.onload=null,this.rel="stylesheet"' href=/lib/fontawesome-free/all.min.css><noscript><link rel=stylesheet href=/lib/fontawesome-free/all.min.css></noscript><link rel=preload as=style onload='this.onload=null,this.rel="stylesheet"' href=/lib/animate/animate.min.css><noscript><link rel=stylesheet href=/lib/animate/animate.min.css></noscript><meta name=google-site-verification content="MQ8DNu27ayX6B_4ObiEDK09vGr1fdy7kOAnbd09hJk4"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"PWA 支持","inLanguage":"zh-TW","mainEntityOfPage":{"@type":"WebPage","@id":"https://pyjjs.com/pwa-support/"},"image":["https://pyjjs.com/images/Apple-Devices-Preview.png"],"genre":"posts","keywords":"PWA","wordcount":1007,"url":"https://pyjjs.com/pwa-support/","datePublished":"2021-05-10T16:21:41+01:00","dateModified":"2024-03-17T01:21:02+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"xxxx","logo":{"@type":"ImageObject","url":"https://pyjjs.com/images/53259609.png","width":400,"height":400}},"authors":[{"@type":"Person","name":"PCloud"}],"description":"Guide to setup PWA in DoIt"}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>function setTheme(e){document.body.setAttribute("theme",e),document.documentElement.style.setProperty("color-scheme",e==="light"?"light":"dark"),window.theme=e,window.isDark=window.theme!=="light"}function saveTheme(e){window.localStorage&&localStorage.setItem("theme",e)}function getMeta(e){const t=document.getElementsByTagName("meta");for(let n=0;n<t.length;n++)if(t[n].getAttribute("name")===e)return t[n];return""}if(window.localStorage&&localStorage.getItem("theme")){let e=localStorage.getItem("theme");e==="light"||e==="dark"||e==="black"?setTheme(e):setTheme(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")}else"auto"==="light"||"auto"==="dark"||"auto"==="black"?(setTheme("auto"),saveTheme("auto")):(saveTheme("auto"),setTheme(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"));let metaColors={light:"#f8f8f8",dark:"#252627",black:"#000000"};getMeta("theme-color").content=metaColors[document.body.getAttribute("theme")],window.switchThemeEventSet=new Set</script><div id=back-to-top></div><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title=追追><img class=logo loading=lazy src=/images/mstile-80x80.png srcset="/images/mstile-80x80.png,
+/images/mstile-80x80.png 1.5x,
+/images/mstile-80x80.png 2x" title=images/mstile-80x80.png height=40 width=40><span id=desktop-header-typeit class=typeit></span></a></div><div class=menu><div class=menu-inner><a class=menu-item href=/posts/>所有文章
+</a><a class=menu-item href=/tags/>標籤
+</a><a class=menu-item href=/categories/>分類
+</a><a class=menu-item href=/series/>系列
+</a><a class=menu-item href=/authors/>作者
+</a><a class=menu-item href=/showcase/>作品
+</a><a class=menu-item href=/categories/documentation/>文檔
+</a><a class=menu-item href=/about/>關於
+</a><a class=menu-item href=https://github.com/HEIGE-PCloud/DoIt title=GitHub rel="noopener noreferrer" target=_blank><i class='fab fa-github fa-fw'></i>
+</a><span class="menu-item delimiter"></span><a href=javascript:void(0); class="menu-item language" title=選擇語言>繁體中文<i class="fas fa-chevron-right fa-fw"></i>
+<select class=language-select title=選擇語言 id=language-select-desktop onchange="location=this.value"><option value=/en/pwa-support/>English</option><option value=/pwa-support/ selected>繁體中文</option></select>
+</a><span class="menu-item search" id=search-desktop><input type=text placeholder=搜尋文章標題或內容... id=search-input-desktop>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=搜尋><i class="fas fa-search fa-fw"></i>
+</a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=清除><i class="fas fa-times-circle fa-fw"></i>
+</a><span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin"></i>
+</span></span><a href=javascript:void(0); class="menu-item theme-select" title=切換主題><i class="fas fa-adjust fa-fw"></i>
+<select class=color-theme-select id=theme-select-desktop title=切換主題><option value=light>淺色</option><option value=dark>深色</option><option value=black>黑色</option><option value=auto>跟隨系統</option></select></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title=追追><img class=logo loading=lazy src=/images/mstile-80x80.png srcset="/images/mstile-80x80.png,
+/images/mstile-80x80.png 1.5x,
+/images/mstile-80x80.png 2x" title=images/mstile-80x80.png height=40 width=40><span id=mobile-header-typeit class=typeit></span></a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder=搜尋文章標題或內容... id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=搜尋><i class="fas fa-search fa-fw"></i>
+</a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=清除><i class="fas fa-times-circle fa-fw"></i>
+</a><span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin"></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>取消</a></div><a class=menu-item href=/posts/ title>所有文章</a><a class=menu-item href=/tags/ title>標籤</a><a class=menu-item href=/categories/ title>分類</a><a class=menu-item href=/series/ title>系列</a><a class=menu-item href=/authors/ title>作者</a><a class=menu-item href=/showcase/ title>作品</a><a class=menu-item href=/categories/documentation/ title>文檔</a><a class=menu-item href=/about/ title>關於</a><a class=menu-item href=https://github.com/HEIGE-PCloud/DoIt title=GitHub rel="noopener noreferrer" target=_blank><i class='fab fa-github fa-fw'></i></a><a href=javascript:void(0); class="menu-item theme-select" title=切換主題>
+<i class="fas fa-adjust fa-fw"></i>
+<select class=color-theme-select id=theme-select-mobile title=切換主題><option value=light>淺色</option><option value=dark>深色</option><option value=black>黑色</option><option value=auto>跟隨系統</option></select>
+</a><a href=javascript:void(0); class=menu-item title=選擇語言>繁體中文<i class="fas fa-chevron-right fa-fw"></i>
+<select class=language-select title=選擇語言 onchange="location=this.value"><option value=/en/pwa-support/>English</option><option value=/pwa-support/ selected>繁體中文</option></select></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>目錄</h2><div class=toc-content id=toc-content-auto><nav id=TableOfContents><ul><li><a href=#什么是-pwa>什么是 PWA？</a></li><li><a href=#为什么要配置-pwa>为什么要配置 PWA？</a></li><li><a href=#如何将使用-doit-主题的静态网站配置为-pwa>如何将使用 DoIt 主题的静态网站配置为 PWA?</a><ul><li><a href=#配置-sitewebmanifest>配置 <code>site.webmanifest</code></a></li><li><a href=#配置离线页面>配置离线页面</a></li><li><a href=#开启-enablepwa-选项>开启 <code>enablePWA</code> 选项</a></li></ul></li><li><a href=#安装并使用你的-pwa>安装并使用你的 PWA</a></li></ul></nav></div></div><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC","true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">PWA 支持</h1><div class=post-meta><div class=post-meta-line><span class=post-author><span class=author><span class="author fas fa-user-circle fa-fw"></span><span class=screen-reader-text> </span><a href=https://pyjjs.com/authors/pcloud>PCloud</a></span>
+</span>&nbsp;<span class=post-category>收錄於 </span>&nbsp;<span class=post-category>類別 <a href=/categories/documentation/><i class="far fa-folder fa-fw"></i>文档</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-05-10>2021-05-10</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime=2024-03-17>2024-03-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;約 1007 字&nbsp;<i class="far fa-clock fa-fw"></i>&nbsp;預計閱讀 3 分鐘&nbsp;</div></div><div class=featured-image><img loading=eager src=/pwa-support/featured-image_hu9a48924576f8892d290b789d2827f47f_15168_1200x0_resize_q75_h2_lanczos_2.webp srcset="/pwa-support/featured-image_hu9a48924576f8892d290b789d2827f47f_15168_700x0_resize_q75_h2_lanczos_2.webp 700w,
+/pwa-support/featured-image_hu9a48924576f8892d290b789d2827f47f_15168_1200x0_resize_q75_h2_lanczos_2.webp 1200w,
+/pwa-support/featured-image_hu9a48924576f8892d290b789d2827f47f_15168_2000x0_resize_q75_h2_lanczos_2.webp 2000w" title="Guide to setup PWA in DoIt" height=581 width=1200></div><div class="details toc" id=toc-static kept><div class="details-summary toc-title"><span>目錄</span>
+<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#什么是-pwa>什么是 PWA？</a></li><li><a href=#为什么要配置-pwa>为什么要配置 PWA？</a></li><li><a href=#如何将使用-doit-主题的静态网站配置为-pwa>如何将使用 DoIt 主题的静态网站配置为 PWA?</a><ul><li><a href=#配置-sitewebmanifest>配置 <code>site.webmanifest</code></a></li><li><a href=#配置离线页面>配置离线页面</a></li><li><a href=#开启-enablepwa-选项>开启 <code>enablePWA</code> 选项</a></li></ul></li><li><a href=#安装并使用你的-pwa>安装并使用你的 PWA</a></li></ul></nav></div></div><div class=content id=content><p>了解如何在 DoIt 主题中配置渐进式网络应用程序 (PWA).</p><h2 id=什么是-pwa class=headerLink><a href=#%e4%bb%80%e4%b9%88%e6%98%af-pwa class=header-mark></a>1 什么是 PWA？</h2><p><a href=https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps target=_blank rel="noopener noreferrer">渐进式网络应用程序(PWA)</a>
+是运用现代的 Web API 以及传统的渐进式增强策略来创建跨平台网络应用程序.这些应用无处不在、功能丰富, 使其具有与原生应用相同的用户体验.</p><h2 id=为什么要配置-pwa class=headerLink><a href=#%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e9%85%8d%e7%bd%ae-pwa class=header-mark></a>2 为什么要配置 PWA？</h2><p>你并不需要将你的站点配置为一个 PWA. 传统的网站足以满足你想要分享的所有内容.但是, PWA 带来了一些可能有用的额外好处.</p><ol><li>在用户安装 PWA 后, 页面将由 service worker 自动缓存, 这使得从第二次访问开始页面将被快速加载.</li><li>用户始终可以在离线时访问缓存的页面.</li></ol><p>这些功能可能对某些网站（例如此文档站点）很有用, 但是将个人博客配置为 PWA 就没有多少意义.当然一切都取决于你的选择, 无论如何 DoIt 主题都将为你提供开启此功能的选项.</p><h2 id=如何将使用-doit-主题的静态网站配置为-pwa class=headerLink><a href=#%e5%a6%82%e4%bd%95%e5%b0%86%e4%bd%bf%e7%94%a8-doit-%e4%b8%bb%e9%a2%98%e7%9a%84%e9%9d%99%e6%80%81%e7%bd%91%e7%ab%99%e9%85%8d%e7%bd%ae%e4%b8%ba-pwa class=header-mark></a>3 如何将使用 DoIt 主题的静态网站配置为 PWA?</h2><h3 id=配置-sitewebmanifest class=headerLink><a href=#%e9%85%8d%e7%bd%ae-sitewebmanifest class=header-mark></a>3.1 配置 <code>site.webmanifest</code></h3><p>你需要在 <code>/static</code> 文件夹下创建名为 <code>site.webmanifest</code> 的文件, 并在此文件提供有关你的 PWA 的信息.</p><p>以下是必填参数.</p><ul><li><p><strong>name</strong> <em>[必须]</em></p><p>你的 PWA 的名称.</p></li><li><p><strong>short_name</strong> <em>[必须]</em></p><p>你的 PWA 的简称.</p></li><li><p><strong>start_url</strong> <em>[必须]</em></p><p>你的 PWA 的起始地址.请默认填写<code>"/"</code>.</p></li><li><p><strong>icons</strong> <em>[必须]</em></p><p>你的 PWA 的图标.你可以将网站的 favicon 作为图标.</p></li></ul><p>您还可以在 <code>site.webmanifest</code> 中设置其他可选值, 查看这篇<a href=https://developer.mozilla.org/zh-CN/docs/Web/Manifest target=_blank rel="noopener noreferrer">文档</a>
+来了解更多.</p><p>这是一份示例 <code>site.webmanifest</code> 文件.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-json data-lang=json><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;name&#34;</span><span class=p>:</span> <span class=s2>&#34;DoIt Theme Documentation&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;short_name&#34;</span><span class=p>:</span> <span class=s2>&#34;DoIt Docs&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;start_url&#34;</span><span class=p>:</span> <span class=s2>&#34;/&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;description&#34;</span><span class=p>:</span> <span class=s2>&#34;The documentation site for Hugo DoIt Theme&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;theme_color&#34;</span><span class=p>:</span> <span class=s2>&#34;#ffffff&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;background_color&#34;</span><span class=p>:</span> <span class=s2>&#34;#ffffff&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;orientation&#34;</span><span class=p>:</span> <span class=s2>&#34;portrait&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;display&#34;</span><span class=p>:</span> <span class=s2>&#34;standalone&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;icons&#34;</span><span class=p>:</span> <span class=p>[</span>
+</span></span><span class=line><span class=cl>        <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&#34;src&#34;</span><span class=p>:</span> <span class=s2>&#34;/android-chrome-192x192.png&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&#34;sizes&#34;</span><span class=p>:</span> <span class=s2>&#34;192x192&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&#34;type&#34;</span><span class=p>:</span> <span class=s2>&#34;image/png&#34;</span>
+</span></span><span class=line><span class=cl>        <span class=p>},</span>
+</span></span><span class=line><span class=cl>        <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&#34;src&#34;</span><span class=p>:</span> <span class=s2>&#34;/android-chrome-512x512.png&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&#34;sizes&#34;</span><span class=p>:</span> <span class=s2>&#34;512x512&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&#34;type&#34;</span><span class=p>:</span> <span class=s2>&#34;image/png&#34;</span>
+</span></span><span class=line><span class=cl>        <span class=p>},</span>
+</span></span><span class=line><span class=cl>        <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&#34;src&#34;</span><span class=p>:</span> <span class=s2>&#34;/apple-touch-icon.png&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&#34;sizes&#34;</span><span class=p>:</span> <span class=s2>&#34;180x180&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&#34;type&#34;</span><span class=p>:</span> <span class=s2>&#34;image/png&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&#34;purpose&#34;</span><span class=p>:</span> <span class=s2>&#34;any maskable&#34;</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>]</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=配置离线页面 class=headerLink><a href=#%e9%85%8d%e7%bd%ae%e7%a6%bb%e7%ba%bf%e9%a1%b5%e9%9d%a2 class=header-mark></a>3.2 配置离线页面</h3><p>离线页面将在访客离线访问未缓存的页面时显示.</p><p>在<code>/content</code>目录下创建<code>offline.md</code>并在其中编写离线提示.</p><div class="details admonition tip
+open"><div class="details-summary admonition-title"><i class="icon fas fa-lightbulb fa-fw"></i>Permalink<i class="details-icon fas fa-angle-right fa-fw"></i></div><div class=details-content><div class=admonition-content>你需要确保离线页面的 <a href=https://gohugo.io/content-management/urls/#permalinks target=_blank rel="noopener noreferrer">Permalink</a>
+是 <code>/offline</code>, 否则你需要手动更改 service worker 中 <code>OFFLINE_CACHE_FILES</code> 和 <code>OFFLINE_PAGE</code> 的值.</div></div></div><div class="details admonition warning
+open"><div class="details-summary admonition-title"><i class="icon fas fa-exclamation-triangle fa-fw"></i>i18n<i class="details-icon fas fa-angle-right fa-fw"></i></div><div class=details-content><div class=admonition-content>目前离线页面不支持 i18n, 如果你运行的是多语言网站, 请考虑在同一页面上编写多条不同语言的离线消息.</div></div></div><p>这是一个示例离线页面.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-md data-lang=md><span class=line><span class=cl>---
+</span></span><span class=line><span class=cl>title: &#34;Offline&#34;
+</span></span><span class=line><span class=cl>---
+</span></span><span class=line><span class=cl><span class=k>
+</span></span></span><span class=line><span class=cl><span class=k>&gt; </span><span class=ge>你没有连接至互联网, 只有缓存的页面可用.
+</span></span></span></code></pre></td></tr></table></div></div><h3 id=开启-enablepwa-选项 class=headerLink><a href=#%e5%bc%80%e5%90%af-enablepwa-%e9%80%89%e9%a1%b9 class=header-mark></a>3.3 开启 <code>enablePWA</code> 选项</h3><p>前往 <code>config.toml</code>, 添加/修改 <code>[params]</code> 配置项下 <code>enablePWA</code> 选项的值为 <code>true</code>.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-toml data-lang=toml><span class=line><span class=cl><span class=p>[</span><span class=nx>params</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>    <span class=c># ...</span>
+</span></span><span class=line><span class=cl>    <span class=nx>enablePWA</span> <span class=p>=</span> <span class=kc>true</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=安装并使用你的-pwa class=headerLink><a href=#%e5%ae%89%e8%a3%85%e5%b9%b6%e4%bd%bf%e7%94%a8%e4%bd%a0%e7%9a%84-pwa class=header-mark></a>4 安装并使用你的 PWA</h2><p>如果一切顺利, 现在当你访问你的网站时, 浏览器将显示一个安装按钮.</p><figure><a class=lightgallery href=./Install-PWA.webp title=./Install-PWA.webp data-thumbnail=./Install-PWA.webp data-sub-html="
       <h2>安装 PWA</h2>
-      "
-    
-  >
-    <img
-      
-      loading="lazy"
-      src="./Install-PWA.webp"
-      srcset="./Install-PWA.webp,
-          ./Install-PWA.webp 1.5x,
-          ./Install-PWA.webp 2x"
-      alt="./Install-PWA.webp"
-      height="693px"
-        width="419px"
-      
-    />
-  </a><figcaption class="image-caption">安装 PWA</figcaption>
-    </figure>
-<p>单击“安装”后, 你的网站将被安装为一个本地的原生应用程序.</p>
-<figure><a
-    class="lightgallery"
-    href="./Installed-PWA.webp"
-    title="./Installed-PWA.webp"
-    data-thumbnail="./Installed-PWA.webp"
-    
-      data-sub-html="
+      "><img loading=lazy src=./Install-PWA.webp srcset="./Install-PWA.webp,
+./Install-PWA.webp 1.5x,
+./Install-PWA.webp 2x" alt=./Install-PWA.webp height=693px width=419px></a><figcaption class=image-caption>安装 PWA</figcaption></figure><p>单击“安装”后, 你的网站将被安装为一个本地的原生应用程序.</p><figure><a class=lightgallery href=./Installed-PWA.webp title=./Installed-PWA.webp data-thumbnail=./Installed-PWA.webp data-sub-html="
       <h2>安装完成</h2>
-      "
-    
-  >
-    <img
-      
-      loading="lazy"
-      src="./Installed-PWA.webp"
-      srcset="./Installed-PWA.webp,
-          ./Installed-PWA.webp 1.5x,
-          ./Installed-PWA.webp 2x"
-      alt="./Installed-PWA.webp"
-      height="1575px"
-        width="1321px"
-      
-    />
-  </a><figcaption class="image-caption">安装完成</figcaption>
-    </figure>
-<p>大功告成！你已成功将你的静态网站配置为了一个 PWA 🎉</p>
-<p>如果你在配置过程中有任何问题, 你可以通过浏览器调试工具中的 <code>Console</code> 与 <code>Application</code> 面板来进行调试.你也可以用<a
-  href="https://www.pwabuilder.com/"
-  
-     target="_blank"
-  
-  rel="noopener noreferrer"
-  
->PWA Builder</a>
-来检查你的网站以获得更多信息.你可以创建一个 <a
-  href="https://github.com/HEIGE-PCloud/DoIt/discussions"
-  
-     target="_blank"
-  
-  rel="noopener noreferrer"
-  
->discussion</a>
- 来获得社区帮助或者提交 <a
-  href="https://github.com/HEIGE-PCloud/DoIt/issues"
-  
-     target="_blank"
-  
-  rel="noopener noreferrer"
-  
->issue</a>
- 来报告你遇到的任何 bug.</p></div>
+      "><img loading=lazy src=./Installed-PWA.webp srcset="./Installed-PWA.webp,
+./Installed-PWA.webp 1.5x,
+./Installed-PWA.webp 2x" alt=./Installed-PWA.webp height=1575px width=1321px></a><figcaption class=image-caption>安装完成</figcaption></figure><p>大功告成！你已成功将你的静态网站配置为了一个 PWA 🎉</p><p>如果你在配置过程中有任何问题, 你可以通过浏览器调试工具中的 <code>Console</code> 与 <code>Application</code> 面板来进行调试.你也可以用<a href=https://www.pwabuilder.com/ target=_blank rel="noopener noreferrer">PWA Builder</a>
+来检查你的网站以获得更多信息.你可以创建一个 <a href=https://github.com/HEIGE-PCloud/DoIt/discussions target=_blank rel="noopener noreferrer">discussion</a>
+来获得社区帮助或者提交 <a href=https://github.com/HEIGE-PCloud/DoIt/issues target=_blank rel="noopener noreferrer">issue</a>
+来报告你遇到的任何 bug.</p></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>更新於 2024-03-17&nbsp;<a class=git-hash href=https://github.com/HEIGE-PCloud/DoIt/commit/e1a065de23f5d57a1ffd26c7390d385244d79689 target=_blank title="commit by JJ(jj@pyjjs.com) e1a065de23f5d57a1ffd26c7390d385244d79689: setting tj zh-TW" rel="noopener noreferrer">
+<i class="fas fa-hashtag fa-fw"></i>e1a065d</a></span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md><span><a class=link-to-mardown href=/pwa-support/index.md target=_blank rel="noopener noreferrer">閱讀原始文件</a>
+</span><span>|&nbsp;<a class=link-to-source href=https://github.com/HEIGE-PCloud/DoIt/blob/main/exampleSite/content/posts/pwa-support/index.zh-tw.md target=_blank rel="noopener noreferrer">查看原始程式碼</a>
+</span><span>|&nbsp;<a class=link-to-edit href=https://github.com/HEIGE-PCloud/DoIt/edit/main/exampleSite/content/posts/pwa-support/index.zh-tw.md target=_blank rel="noopener noreferrer">編輯此頁</a>
+</span><span>|&nbsp;<a class=link-to-report href="https://github.com/HEIGE-PCloud/DoIt/issues/new?title=[bug]%20PWA+%E6%94%AF%E6%8C%81&body=|Field|Value|%0A|-|-|%0A|Title|PWA+%E6%94%AF%E6%8C%81|%0A|Url|https://pyjjs.com/pwa-support/|%0A|Filename|https://github.com/HEIGE-PCloud/DoIt/blob/main/exampleSite/content/posts/pwa-support/index.zh-tw.md|" target=_blank rel="noopener noreferrer">報告問題</a></span></div><div class=post-info-share><button title="分享到 Twitter" data-sharer=twitter data-url=https://pyjjs.com/pwa-support/ data-title="PWA 支持" data-hashtags=PWA><span class="fab fa-twitter fa-fw"></span></button><button title="分享到 Facebook" data-sharer=facebook data-url=https://pyjjs.com/pwa-support/ data-hashtag=PWA><span class="fab fa-facebook-square fa-fw"></span></button><button title="分享到 Hacker News" data-sharer=hackernews data-url=https://pyjjs.com/pwa-support/ data-title="PWA 支持"><span class="fab fa-hacker-news fa-fw"></span></button><button title="分享到 Line" data-sharer=line data-url=https://pyjjs.com/pwa-support/ data-title="PWA 支持"><span data-svg-src=/lib/simple-icons/icons/line.min.svg></span></button><button title="分享到 微博" data-sharer=weibo data-url=https://pyjjs.com/pwa-support/ data-title="PWA 支持" data-image=featured-image.webp data-ralateuid=xxxx><span class="fab fa-weibo fa-fw"></span></button><button title="分享到 Telegram" data-sharer=telegram data-url=https://pyjjs.com/pwa-support/ data-title="PWA 支持" data-web><span class="fab fa-telegram-plane fa-fw"></span></button><script>function shareOnMastodon(e,t){const o="share_mastodon_domain",i=localStorage.getItem(o)??"mastodon.social",n=prompt("Enter your Mastodon domain",i);if(n===null)return;localStorage.setItem(o,n);const a=e+`
 
-    
-
-<div class="post-footer" id="post-footer">
-  <div class="post-info">
-    <div class="post-info-line">
-      <div class="post-info-mod">
-        <span>更新於 2021-05-10</span>
-      </div>
-      <div class="post-info-license"></div>
-    </div>
-    <div class="post-info-line">
-      <div class="post-info-md"><span><a
-                class="link-to-mardown"
-                href=/pwa-support/index.md
-                target="_blank"
-                rel="noopener noreferrer"
-              >閱讀原始文檔</a>
-            </span><span>|&nbsp;<a
-                class="link-to-source"
-                href=https://github.com/HEIGE-PCloud/DoIt/blob/main/exampleSite/content/posts\pwa-support\index.zh-tw.md
-                target="_blank"
-                rel="noopener noreferrer"
-              ></a>
-            </span><span>|&nbsp;<a
-                class="link-to-edit"
-                href=https://github.com/HEIGE-PCloud/DoIt/edit/main/exampleSite/content/posts\pwa-support\index.zh-tw.md
-                target="_blank"
-                rel="noopener noreferrer"
-              ></a>
-            </span><span>|&nbsp;<a
-                class="link-to-report"
-                href=https://github.com/HEIGE-PCloud/DoIt/issues/new?title=[bug]%20PWA+%E6%94%AF%E6%8C%81&body=|Field|Value|%0A|-|-|%0A|Title|PWA+%E6%94%AF%E6%8C%81|%0A|Url|https://pyjjs.com/pwa-support/|%0A|Filename|https://github.com/HEIGE-PCloud/DoIt/blob/main/exampleSite/content/posts\pwa-support\index.zh-tw.md|
-                target="_blank"
-                rel="noopener noreferrer"
-              ></a>
-            </span></div>
-      <div class="post-info-share"><button
-      title="分享到 Twitter"
-      data-sharer="twitter"
-      data-url="https://pyjjs.com/pwa-support/"
-      data-title="PWA 支持"
-      
-        data-hashtags="PWA"
-      
-    ><span class="fab fa-twitter fa-fw"></span></button><button
-      title="分享到 Facebook"
-      data-sharer="facebook"
-      data-url="https://pyjjs.com/pwa-support/"
-      data-hashtag="PWA"
-    ><span class="fab fa-facebook-square fa-fw"></span></button><button
-      title="分享到 Hacker News"
-      data-sharer="hackernews"
-      data-url="https://pyjjs.com/pwa-support/"
-      data-title="PWA 支持"
-    ><span class="fab fa-hacker-news fa-fw"></span></button><button
-      title="分享到 Line"
-      data-sharer="line"
-      data-url="https://pyjjs.com/pwa-support/"
-      data-title="PWA 支持"
-    ><span data-svg-src="/lib/simple-icons/icons/line.min.svg"></span></button><button
-      title="分享到 微博"
-      data-sharer="weibo"
-      data-url="https://pyjjs.com/pwa-support/"
-      data-title="PWA 支持"
-      
-        data-image="featured-image.webp"
-      
-        data-ralateuid="xxxx"
-      
-    ><span class="fab fa-weibo fa-fw"></span></button><button
-      title="分享到 Telegram"
-      data-sharer="telegram"
-      data-url="https://pyjjs.com/pwa-support/"
-      data-title="PWA 支持"
-      data-web
-    ><span class="fab fa-telegram-plane fa-fw"></span></button><script>
-      function shareOnMastodon(title, link) {
-        const SHARE_MASTODON_DOMAIN = "share_mastodon_domain";
-        const savedDomain =
-          localStorage.getItem(SHARE_MASTODON_DOMAIN) ?? "mastodon.social";
-        const domain = prompt("Enter your Mastodon domain", savedDomain);
-        if (domain === null) {
-          return;
-        }
-        localStorage.setItem(SHARE_MASTODON_DOMAIN, domain);
-        const text = title + "\n\n" + link;
-        const url = new URL("https://" + domain);
-        url.pathname = "share";
-        url.searchParams.append("text", text);
-        window.open(
-          url,
-          "_blank",
-          "width=500,height=500,left=500,toolbar=0,status=0",
-        );
-      }
-    </script>
-    <button
-      title="分享到 Mastodon"
-      onclick="javascript:shareOnMastodon(&#34;PWA 支持&#34;, &#34;https://pyjjs.com/pwa-support/&#34;)"
-    ><span class="fab fa-mastodon fa-fw"></span></button></div>
-    </div>
-  </div>
-
-  <div class="post-info-more">
-    <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/pwa/">PWA</a></section>
-    <section>
-      <span
-        ><a href="javascript:void(0);" onclick="window.history.back();"
-          >返回</a
-        ></span
-      >&nbsp;|&nbsp;<span
-        ><a href="/">主頁</a></span
-      >
-    </section>
-  </div>
-
-  <div class="post-nav"><a
-        href="/create-diagrams/"
-        class="prev"
-        rel="prev"
-        title="如何在 DoIt 中创建图表"
-        ><i class="fas fa-angle-left fa-fw"></i>如何在 DoIt 中创建图表</a
-      >
-      <a
-        href="/emoji-support/"
-        class="next"
-        rel="next"
-        title="Emoji 支持"
-        >Emoji 支持<i class="fas fa-angle-right fa-fw"></i
-      ></a></div>
-</div>
-<div id="comments"><div id="utterances"></div><noscript>
-                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
-            </noscript></div></article></div>
-      </main><footer class="footer">
-    <div class="footer-container"><div class="footer-line">
-          由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" title="Hugo 0.123.8">Hugo</a> 強力驅動 | 主題 - <no value>&nbsp;|&nbsp;
-        </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 -2024</span><span class="author" itemprop="copyrightHolder"
-            >&nbsp;<a
-              href="https://github.com/stevenjjwu"
-              target="_blank"
-              rel="noopener noreferrer"
-              >JJ</a
-            ></span
-          >&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
-      <div class="footer-line"></div>
-      <div class="footer-line"></div>
-    </div></footer></div>
-
-    <div id="fixed-buttons"><a
-        href="#back-to-top"
-        id="back-to-top-button"
-        class="fixed-button"
-        title="回到頂部"
-      >
-        <i class="fas fa-arrow-up fa-fw"></i>
-      </a><a
-        href="#"
-        id="view-comments"
-        class="fixed-button"
-        title="查看評論"
-      >
-        <i class="fas fa-comment fa-fw"></i>
-      </a>
-    </div><div class="assets"><link
-      rel="stylesheet"
-      href="/lib/lightgallery/lightgallery.min.css"
-      
-    /><script type="text/javascript">window.config={"code":{"copyTitle":"複製到剪貼板","maxShownLines":10},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"","lightTheme":"github-light","repo":"Hugo-DoIt/utterances-comments"}},"data":{"desktop-header-typeit":"追追","mobile-header-typeit":"追追"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"algoliaAppID":"5YGRNRQK1G","algoliaIndex":"zh_cn_index","algoliaSearchKey":"0ff6874805de24b84aa1d5ebccad56cd","highlightTag":"em","maxResultLength":10,"noResultsFound":"沒有找到結果","snippetLength":50,"type":"algolia"},"sharerjs":true,"table":{"sort":true},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"desktop-header-typeit":["desktop-header-typeit"],"mobile-header-typeit":["mobile-header-typeit"]},"duration":-1,"speed":100}};</script><script
-    type="text/javascript"
-    src="/lib/tablesort/tablesort.min.js"
-    
-  ></script><script
-    type="text/javascript"
-    src="/lib/lightgallery/lightgallery.min.js"
-    
-  ></script><script
-    type="text/javascript"
-    src="/lib/lightgallery/lg-thumbnail.min.js"
-    
-  ></script><script
-    type="text/javascript"
-    src="/lib/lightgallery/lg-zoom.min.js"
-    
-  ></script><script
-    type="text/javascript"
-    src="/lib/clipboard/clipboard.min.js"
-    
-  ></script><script
-    type="text/javascript"
-    src="/lib/sharer/sharer.min.js"
-    
-  ></script><script
-    type="text/javascript"
-    src="/lib/typeit/typeit.min.js"
-    
-  ></script><script
-    type="text/javascript"
-    src="/js/theme.min.js"
-    
-      defer
-    
-  ></script><script
-    type="text/javascript"
-    src="/js/utterances.min.js"
-    
-      defer
-    
-  ></script></div>
-</body>
-</html>
+`+t,s=new URL("https://"+n);s.pathname="share",s.searchParams.append("text",a),window.open(s,"_blank","width=500,height=500,left=500,toolbar=0,status=0")}</script>
+<button title="分享到 Mastodon" onclick='shareOnMastodon("PWA 支持","https://pyjjs.com/pwa-support/")'><span class="fab fa-mastodon fa-fw"></span></button></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/pwa/>PWA</a></section><section><span><a href=javascript:void(0); onclick=window.history.back()>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主頁</a></span></section></div><div class=post-nav><a href=/create-diagrams/ class=prev rel=prev title="如何在 DoIt 中创建图表"><i class="fas fa-angle-left fa-fw"></i>如何在 DoIt 中创建图表</a>
+<a href=/emoji-support/ class=next rel=next title="Emoji 支持">Emoji 支持<i class="fas fa-angle-right fa-fw"></i></a></div></div><div id=comments><div id=utterances></div><noscript>Please enable JavaScript to view the comments powered by <a href=https://utteranc.es/>Utterances</a>.</noscript></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>由 <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.124.0">Hugo</a> 強力驅動&nbsp;|&nbsp;主題 - <a href=https://github.com/HEIGE-PCloud/DoIt target=_blank rel="noopener noreferrer" title="DoIt 0.4.0"><i class="far fa-edit fa-fw"></i> DoIt</a></div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2024</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://github.com/stevenjjwu target=_blank rel="noopener noreferrer">JJ</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div><div class=footer-line></div><div class=footer-line></div></div></footer></div><div id=fixed-buttons><a href=#back-to-top id=back-to-top-button class=fixed-button title=回到頂部><i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title=查看評論><i class="fas fa-comment fa-fw"></i></a></div><div class=assets><link rel=stylesheet href=/lib/lightgallery/lightgallery.min.css><script type=text/javascript>window.config={code:{copyTitle:"複製到剪貼板",maxShownLines:10},comment:{utterances:{darkTheme:"github-dark",issueTerm:"pathname",label:"",lightTheme:"github-light",repo:"Hugo-DoIt/utterances-comments"}},data:{"desktop-header-typeit":"追追","mobile-header-typeit":"追追"},lightGallery:{actualSize:!1,exThumbImage:"data-thumbnail",hideBarsDelay:2e3,selector:".lightgallery",speed:400,thumbContHeight:80,thumbWidth:80,thumbnail:!0},search:{algoliaAppID:"5YGRNRQK1G",algoliaIndex:"zh_cn_index",algoliaSearchKey:"0ff6874805de24b84aa1d5ebccad56cd",highlightTag:"em",maxResultLength:10,noResultsFound:"沒有找到結果",snippetLength:50,type:"algolia"},sharerjs:!0,table:{sort:!0},typeit:{cursorChar:"|",cursorSpeed:1e3,data:{"desktop-header-typeit":["desktop-header-typeit"],"mobile-header-typeit":["mobile-header-typeit"]},duration:-1,speed:100}}</script><script type=text/javascript src=/lib/tablesort/tablesort.min.js></script><script type=text/javascript src=/lib/lightgallery/lightgallery.min.js></script><script type=text/javascript src=/lib/lightgallery/lg-thumbnail.min.js></script><script type=text/javascript src=/lib/lightgallery/lg-zoom.min.js></script><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=/lib/sharer/sharer.min.js></script><script type=text/javascript src=/lib/typeit/typeit.min.js></script><script type=text/javascript src=/js/theme.min.js defer></script><script type=text/javascript src=/js/utterances.min.js defer></script></div></body></html>
