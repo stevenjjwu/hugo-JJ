@@ -1,25 +1,25 @@
 # Menu config
-# 菜单配置
+# 功能表配置
 
 [[main]]
   identifier = "posts"
   # you can add extra information before the name (HTML format is supported), such as icons
-  # 你可以在名称 (允许 HTML 格式) 之前添加其他信息, 例如图标
+  # 你可以在名稱 (允許 HTML 格式) 之前添加其他資訊, 例如圖示
   pre = ""
   # you can add extra information after the name (HTML format is supported), such as icons
-  # 你可以在名称 (允许 HTML 格式) 之后添加其他信息, 例如图标
+  # 你可以在名稱 (允許 HTML 格式) 之後添加其他資訊, 例如圖示
   post = ""
   name = "所有文章"
   url = "/posts/"
   # title will be shown when you hover on this menu link.
-  # 将鼠标悬停在此菜单链接上时将显示标题。
+  # 將滑鼠懸停在此功能表連結上時將顯示標題。
   title = ""
   weight = 1
 [[main]]
   identifier = "tags"
   pre = ""
   post = ""
-  name = "标签"
+  name = "標籤"
   url = "/tags/"
   title = ""
   weight = 2
@@ -27,7 +27,7 @@
   identifier = "categories"
   pre = ""
   post = ""
-  name = "分类"
+  name = "分類"
   url = "/categories/"
   title = ""
   weight = 3
@@ -58,7 +58,7 @@
 [[main]]
   identifier = "documentation"
   pre = ""
-  name = "文档"
+  name = "文檔"
   url = "/categories/documentation/"
   title = ""
   weight = 7
@@ -66,7 +66,7 @@
   identifier = "about"
   pre = ""
   post = ""
-  name = "关于"
+  name = "關於"
   url = "/about/"
   title = ""
   weight = 8
