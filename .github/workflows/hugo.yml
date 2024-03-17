@@ -1,26 +1,30 @@
-# Sample workflow for building and deploying a Hugo site to GitHub Pages
-name: Deploy Hugo site to Pages
-	on:
-	  push:
-	branches:
-	  - master   # main 更新触发
-	jobs:
-	  build-deploy:
-	runs-on: ubuntu-latest
-	steps:
-	  - uses: actions/checkout@v1
-	  - name: Setup Hugo
-	    uses: peaceiris/actions-hugo@v2
-	    with:
-	      hugo-version: latest
-	
-	  - name: Build 
-	    run: hugo
-	
-	  - name: Deploy
-	    uses: peaceiris/actions-gh-pages@v3
-	    with:
-	      personal_token: ${{ secrets.personal_token }} # 填写你自己的 personal_token
-	      PUBLISH_BRANCH: gh-pages  # 推送到当前 gh-pages 分支
-	      PUBLISH_DIR: ./public  # hugo 生成到 public 作为跟目录
-	      commit_message: ${{ github.event.head_commit.message }}
+name: Github-Pages
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  deploy:
+    runs-on: ubuntu-lastest
+    steps:
+      - uses: actions/checkout@v1
+        with:
+          submodules: true
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: lastest
+          extended: true
+
+      - name: Build
+        run: hugo --gc --minify --cleanDestinationDir
+
+      # - name: Deploy
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_branch: master
+      #     force_orphan: true
