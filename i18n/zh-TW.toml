@@ -69,7 +69,7 @@ other = "跟隨系統"
 
 # === partials/footer.html ===
 [poweredBy]
-other = "由 {{ .Hugo }} 強力驅動"
+other = "由 {{ .Hugo }} 驅動"
 
 [hostedOn]
 other = "託管在 {{ .Host }} 上"
