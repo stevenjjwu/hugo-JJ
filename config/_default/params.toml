@@ -409,7 +409,7 @@ srcsetLargeResizeMethod = "2000x webp Lanczos q75"
     [page.comment.utterances]
       enable = true
       # owner/repo
-      repo = "Hugo-DoIt/utterances-comments"
+      repo = "stevenjjwu/hugo-JJ"
       issueTerm = "pathname"
       label = ""
       lightTheme = "github-light"
