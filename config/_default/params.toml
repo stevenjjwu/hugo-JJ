@@ -537,7 +537,7 @@ srcsetLargeResizeMethod = "2000x webp Lanczos q75"
 # Site verification code for Google/Bing/Yandex/Pinterest/Baidu
 # 网站验证代码，用于 Google/Bing/Yandex/Pinterest/Baidu
 [verification]
-  google = "MQ8DNu27ayX6B_4ObiEDK09vGr1fdy7kOAnbd09hJk4"
+  google = ""
   bing = ""
   yandex = ""
   pinterest = ""
@@ -558,7 +558,7 @@ srcsetLargeResizeMethod = "2000x webp Lanczos q75"
 # Analytics config
 # 网站分析配置
 [analytics]
-  enable = false
+  enable = true
   # Google Analytics
   [analytics.google]
     id = "G-JZ1QMEP8LM"
