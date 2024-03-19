@@ -1,6 +1,6 @@
 # website title
 # 网站标题
-title = "Hugo DoIt Theme Documentation"
+title = "追追"
 # DoIt theme version
 # DoIt 主题版本
 version = "0.4.X"
@@ -9,7 +9,7 @@ version = "0.4.X"
 defaultTheme = "light"
 # public git repo url only then enableGitInfo is true
 # 公共 git 仓库路径，仅在 enableGitInfo 设为 true 时有效
-gitRepo = "https://github.com/HEIGE-PCloud/DoIt"
+gitRepo = "https://github.com/stevenjjwu/hugo-JJ"
 # which hash function used for SRI, when empty, no SRI is used ("sha256", "sha384", "sha512", "md5")
 # 哪种哈希函数用来 SRI, 为空时表示不使用 SRI ("sha256", "sha384", "sha512", "md5")
 fingerprint = ""
@@ -161,17 +161,17 @@ srcsetLargeResizeMethod = "2000x webp Lanczos q75"
   linkToMarkdown = true
   # configure the link to view source the post
   # 配置文章原始文件的链接
-  linkToSource = "https://github.com/HEIGE-PCloud/DoIt/blob/main/exampleSite/content/{path}"
+  linkToSource = "https://github.com/stevenjjwu/hugo-JJ/blob/main/content/{path}"
   # "https://github.com/user/repo/blob/main/{path}"
   # configure the link to edit the post
   # 配置编辑文章的链接
-  linkToEdit = "https://github.com/HEIGE-PCloud/DoIt/edit/main/exampleSite/content/{path}"
+  linkToEdit = "https://github.com/stevenjjwu/hugo-JJ/edit/main/content/{path}"
   # https://github.com/user/repo/edit/main/{path}
   # https://gitlab.com/user/repo/-/edit/main/{path}
   # https://bitbucket.org/user/repo/src/main/{path}?mode=edit
   # configure the link to report issue for the post
   # 配置提交错误的链接
-  linkToReport = "https://github.com/HEIGE-PCloud/DoIt/issues/new?title=[bug]%20{title}&body=|Field|Value|%0A|-|-|%0A|Title|{title}|%0A|Url|{url}|%0A|Filename|https://github.com/HEIGE-PCloud/DoIt/blob/main/exampleSite/content/{path}|"
+  linkToReport = "https://github.com/stevenjjwu/hugo-JJ/issues/new?title=[bug]%20{title}&body=|Field|Value|%0A|-|-|%0A|Title|{title}|%0A|Url|{url}|%0A|Filename|https://github.com/stevenjjwu/hugo-JJ/blob/main/content/{path}|"
   # https://github.com/user/repo/issues/new?title=[bug]%20{title}&body=|Field|Value|%0A|-|-|%0A|Title|{title}|%0A|Url|{url}|%0A|Filename|https://github.com/user/repo/blob/main/{path}|"
   # https://gitlab.com/user/repo/-/issues/new?issue[title]=[bug]%20{title}&issue[description]=|Field|Value|%0A|-|-|%0A|Title|{title}|%0A|Url|{url}|%0A|Filename|https://gitlab.com/user/repo/-/edit/main/{path}|
   # whether to show the full text content in RSS
@@ -230,7 +230,7 @@ srcsetLargeResizeMethod = "2000x webp Lanczos q75"
     # whether to enable auto header numbering
     # 是否开启标题自动编号
     [page.header.number]
-      enable = true
+      enable = false
       [page.header.number.format]
         h2 = "{h2} {title}"
         h3 = "{h2}.{h3} {title}"
@@ -502,7 +502,7 @@ srcsetLargeResizeMethod = "2000x webp Lanczos q75"
     # Publisher info
     # 出版者信息
     [page.seo.publisher]
-      name = "xxxx"
+      name = "JJ"
       logoUrl = "/images/53259609.png"
   # Related content config
   # 相关文章推荐配置
@@ -515,7 +515,7 @@ srcsetLargeResizeMethod = "2000x webp Lanczos q75"
 [sponsor]
   enable = false
   bio = "If you find this post helpful, please consider sponsoring."
-  link = "https://github.com/sponsors/HEIGE-PCloud"
+  link = "https://github.com/sponsors/stevenjjwu"
   # custom = "<a href=\"https://www.buymeacoffee.com/PCloud\" target=\"_blank\"><img src=\"https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png\" alt=\"Buy Me A Coffee\" style=\"height: 40px !important;width: 145 !important;\" ></a>"
 
 # TypeIt config
